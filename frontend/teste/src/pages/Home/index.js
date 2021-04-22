@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 import { Form, Col, Button, Spinner } from 'react-bootstrap';
 import './styles.css';
 import api from '../../configs/api';
+import DateTimePicker from 'react-datetime-picker';
+
 
 export default function Home() {
 	const [file, setFile] = useState([]);
@@ -16,10 +18,12 @@ export default function Home() {
 	const [localizacao, setLocalizacao] = useState('');
 	const [taxaDepreciacao, setTaxaDepreciacao] = useState(0);
 	const [vidaUtil, setVidaUtil] = useState('');
-	const [notaFiscal, setNotaFiscal] = useState('');
+	const [notaFiscal, setNotaFiscal] = useState(0);
 	const [fornecedor, setFornecedor] = useState('');
-	const [dataEntrada, setDataEntrada] = useState('');
-	const [dataEmissao, setDataEmissao] = useState('');
+	const [dataEntrada, setDataEntrada] = useState(new Date());
+	const [dataEntradaString, setDataEntradaString] = useState('');
+	const [dataEmissao, setDataEmissao] = useState(new Date());
+	const [dataEmissaoString, setDataEmissaoString] = useState('');
 	const [valorAquisicao, setValorAquisicao] = useState(0);
 	const [ICMS, setICMS] = useState(0);
 	const [CIAP, setCIAP] = useState(false);
@@ -27,13 +31,31 @@ export default function Home() {
 	const [COFINS, setCOFINS] = useState(0);
 	const [isLoading, setIsLoading] = useState(false);
 	var history = useHistory();
-
+	
+	
 	useEffect(() => {
 		localStorage.setItem('logoURL', image);
 		return () => false;
-	}, [image]);
+	}, [image,dataEntrada,dataEmissao]);
 
-	async function onSubmit(e) {
+	useEffect(() => {
+		var formatEntrada = Intl.DateTimeFormat('pt-br',{
+			day: '2-digit',
+			month: '2-digit',
+			year: 'numeric'
+		}).format(dataEntrada);
+		setDataEntradaString(formatEntrada)
+		var formatEmissao = Intl.DateTimeFormat('pt-br',{
+			day: '2-digit',
+			month: '2-digit',
+			year: 'numeric'
+		}).format(dataEmissao);
+		setDataEmissaoString(formatEmissao);
+
+	}, [dataEntrada,dataEmissao]);
+
+	async function onSubmit(e,val) {
+		console.log(val);
 		setIsLoading(true);
 		e.preventDefault();
 		if(file.isEmpty){
@@ -42,8 +64,7 @@ export default function Home() {
 		}
 		try {
 			await uploadLogo();
-			var data = {
-				image,
+			var data = {	
 				numItem,
 				grupo,
 				subGrupo,
@@ -55,8 +76,8 @@ export default function Home() {
 				vidaUtil,
 				notaFiscal,
 				fornecedor,
-				dataEntrada,
-				dataEmissao,
+				dataEntrada: dataEntradaString,
+				dataEmissao: dataEmissaoString,
 				valorAquisicao,
 				ICMS,
 				CIAP,
@@ -151,7 +172,7 @@ export default function Home() {
 				<Form.Row>
 					<Form.Group as={Col} controlId="NotaFiscal">
 						<Form.Label>Nota fiscal estimada</Form.Label>
-						<Form.Control onChange={(e) => setNotaFiscal(e.target.value)} placeholder="Nota fiscal estimada" />
+						<Form.Control onChange={(e) => setNotaFiscal(+e.target.value)} type="number" placeholder="Nota fiscal estimada" />
 					</Form.Group>
 					<Form.Group as={Col} controlId="Fornecedor">
 						<Form.Label>Fornecedor</Form.Label>
@@ -162,17 +183,19 @@ export default function Home() {
 				<Form.Row>
 					<Form.Group as={Col} controlId="DataEntrada">
 						<Form.Label>Data de entrada</Form.Label>
-						<Form.Control onChange={(e) => setDataEntrada(e.target.value)} placeholder="Data de entrada" />
+						<DateTimePicker className="ml-2" onChange={setDataEntrada} value={dataEntrada}/>
+
 					</Form.Group>
-					<Form.Group as={Col} controlId="DataEmissão">
-						<Form.Label>Data de emissão</Form.Label>
-						<Form.Control onChange={(e) => setDataEmissao(e.target.value)} placeholder="Data de emissão" />
+					<Form.Group as={Col} controlId="DataEmissao">
+						<Form.Label>Data Emissao</Form.Label>
+						<DateTimePicker className="ml-2" onChange={setDataEmissao} value={dataEmissao}/>
 					</Form.Group>
-				</Form.Row>
+					</Form.Row>
+				
 
 				<Form.Group controlId="ValorAquisicao">
 					<Form.Label>Valor de aquisição</Form.Label>
-					<Form.Control onChange={(e) => setValorAquisicao(+e.target.value)} type="number" />
+					<Form.Control onChange={(e) => setValorAquisicao(+e.target.value)} type="number"  />
 				</Form.Group>
 
 				<Form.Row>
@@ -185,7 +208,7 @@ export default function Home() {
 				</Form.Row>
 
 				<Form.Group controlId="CIAP">
-					<Form.Check onChange={(e) => setCIAP(+e.target.value)} type="checkbox" label="CIAP" />
+					<Form.Check onChange={(e) => setCIAP(e.target.checked)} type="checkbox" label="CIAP" />
 				</Form.Group>
 
 				<Form.Group controlId="PIS">

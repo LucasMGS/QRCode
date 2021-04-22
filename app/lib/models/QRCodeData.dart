@@ -20,12 +20,12 @@ class Item {
   int? icms;
   int? cofins;
   int? pis;
-  bool ciap;
+  String? ciap;
   bool isValidated;
   Validacao validacao;
 
   Item({
-    this.ciap = false,
+    this.ciap,
     this.cofins,
     this.centroDeCusto,
     this.dataEmissao,
@@ -52,11 +52,11 @@ class Item {
   static Item fromJson(Map<String, dynamic> json) {
     return Item(
       centroDeCusto: json['CentroDeCusto'] ?? '',
-      ciap: json['CIAP'] ?? false,
+      ciap: json['CIAP'] == true ? 'Sim' : 'Não',
       id: json['Id'],
       cofins: json['COFINS'] ?? 0,
       dataEmissao: json['DataEmissao'] ?? '',
-      dataEntrada: json['dataEntrada'] ?? '',
+      dataEntrada: json['DataEntrada'] ?? '',
       fornecedor: json['Fornecedor'] ?? '',
       frota: json['Frota'] ?? '',
       grupo: json['Grupo'] ?? '',
