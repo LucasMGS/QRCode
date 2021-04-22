@@ -1,0 +1,17 @@
+C:\src\apps\cooperrubi\backend\Teste\Teste.Application\obj\Debug\net5.0\Teste.Application.csprojAssemblyReference.cache
+C:\src\apps\cooperrubi\backend\Teste\Teste.Application\obj\Debug\net5.0\Teste.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\src\apps\cooperrubi\backend\Teste\Teste.Application\obj\Debug\net5.0\Teste.Application.AssemblyInfoInputs.cache
+C:\src\apps\cooperrubi\backend\Teste\Teste.Application\obj\Debug\net5.0\Teste.Application.AssemblyInfo.cs
+C:\src\apps\cooperrubi\backend\Teste\Teste.Application\obj\Debug\net5.0\Teste.Application.csproj.CoreCompileInputs.cache
+C:\src\apps\cooperrubi\backend\Teste\Teste.Application\bin\Debug\net5.0\Teste.Application.deps.json
+C:\src\apps\cooperrubi\backend\Teste\Teste.Application\bin\Debug\net5.0\Teste.Application.dll
+C:\src\apps\cooperrubi\backend\Teste\Teste.Application\bin\Debug\net5.0\ref\Teste.Application.dll
+C:\src\apps\cooperrubi\backend\Teste\Teste.Application\bin\Debug\net5.0\Teste.Application.pdb
+C:\src\apps\cooperrubi\backend\Teste\Teste.Application\bin\Debug\net5.0\Teste.Domain.dll
+C:\src\apps\cooperrubi\backend\Teste\Teste.Application\bin\Debug\net5.0\Teste.Infra.dll
+C:\src\apps\cooperrubi\backend\Teste\Teste.Application\bin\Debug\net5.0\Teste.Infra.pdb
+C:\src\apps\cooperrubi\backend\Teste\Teste.Application\bin\Debug\net5.0\Teste.Domain.pdb
+C:\src\apps\cooperrubi\backend\Teste\Teste.Application\obj\Debug\net5.0\Teste.Application.csproj.CopyComplete
+C:\src\apps\cooperrubi\backend\Teste\Teste.Application\obj\Debug\net5.0\Teste.Application.dll
+C:\src\apps\cooperrubi\backend\Teste\Teste.Application\obj\Debug\net5.0\ref\Teste.Application.dll
+C:\src\apps\cooperrubi\backend\Teste\Teste.Application\obj\Debug\net5.0\Teste.Application.pdb

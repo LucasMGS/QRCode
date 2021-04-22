@@ -1,0 +1,12 @@
+C:\src\apps\cooperrubi\backend\Teste\Teste.Domain\bin\Debug\net5.0\Teste.Domain.deps.json
+C:\src\apps\cooperrubi\backend\Teste\Teste.Domain\bin\Debug\net5.0\Teste.Domain.dll
+C:\src\apps\cooperrubi\backend\Teste\Teste.Domain\bin\Debug\net5.0\ref\Teste.Domain.dll
+C:\src\apps\cooperrubi\backend\Teste\Teste.Domain\bin\Debug\net5.0\Teste.Domain.pdb
+C:\src\apps\cooperrubi\backend\Teste\Teste.Domain\obj\Debug\net5.0\Teste.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\src\apps\cooperrubi\backend\Teste\Teste.Domain\obj\Debug\net5.0\Teste.Domain.AssemblyInfoInputs.cache
+C:\src\apps\cooperrubi\backend\Teste\Teste.Domain\obj\Debug\net5.0\Teste.Domain.AssemblyInfo.cs
+C:\src\apps\cooperrubi\backend\Teste\Teste.Domain\obj\Debug\net5.0\Teste.Domain.csproj.CoreCompileInputs.cache
+C:\src\apps\cooperrubi\backend\Teste\Teste.Domain\obj\Debug\net5.0\Teste.Domain.dll
+C:\src\apps\cooperrubi\backend\Teste\Teste.Domain\obj\Debug\net5.0\ref\Teste.Domain.dll
+C:\src\apps\cooperrubi\backend\Teste\Teste.Domain\obj\Debug\net5.0\Teste.Domain.pdb
+C:\src\apps\cooperrubi\backend\Teste\Teste.Domain\obj\Debug\net5.0\Teste.Domain.csprojAssemblyReference.cache
